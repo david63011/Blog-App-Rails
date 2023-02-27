@@ -1,0 +1,2 @@
+class CreatePost < ApplicationRecord
+end
