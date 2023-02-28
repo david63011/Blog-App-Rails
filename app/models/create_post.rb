@@ -1,3 +1,4 @@
+# create_posts table
 class CreatePost < ApplicationRecord
   has_many :create_comments, foreign_key: :create_posts_id
   has_many :create_likes, foreign_key: :create_posts_id
