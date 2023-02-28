@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: :author_id
-    belongs_to :posts, class_name: 'Post', foreign_key: :create_posts_id
+  belongs_to :posts, class_name: 'Post', foreign_key: :create_posts_id
   has_many :comments, foreign_key: :create_posts_id
 
   def update_comments_counter
