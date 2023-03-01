@@ -1,8 +1,8 @@
 # create_posts table
-class CreatePost < ApplicationRecord
-  has_many :comments, foreign_key: :create_posts_id
-  has_many :likes, foreign_key: :create_posts_id
-  belongs_to :author, class_name: 'CreateUser', foreign_key: :author_id
+class Post < ApplicationRecord
+  has_many :comments, foreign_key: :posts_id
+  has_many :likes, foreign_key: :posts_id
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
   after_save :update_posts_counter
 
   def latest_comments
