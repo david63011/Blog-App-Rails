@@ -24,7 +24,7 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Ruby Capstone - Catalog of My Things <a name="about-project"></a>
+# 📖Blog App<a name="about-project"></a>
 
 Is a blog app that is built with ruby on rails
 
@@ -50,7 +50,7 @@ Ruby on Rails
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 💻 Getting Started <a name="getting-started"></a>
+## 💻 Setup <a name="setup"></a>
 
 Clone project
 
@@ -58,6 +58,22 @@ Clone project
 git clone https://github.com/david63011/Blog-App-Rails.git
 
 cd MyApp
+```
+
+## 💻 install <a name="install></a>
+
+Install almost all dependencies/gems of the project by running:
+
+```
+Bundle install
+```
+
+## 💻 run tests <a name="run tests></a>
+
+To run tests, run the following command:
+
+```
+bin/rails test test/models/article_test.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -92,7 +108,7 @@ If you like this project please give it a star 😁🌟✨
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Microverse.
+|Thanks to Microverse for the help and materials
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
