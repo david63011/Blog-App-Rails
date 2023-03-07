@@ -5,6 +5,7 @@ RSpec.describe 'Users', type: :request do
     before(:each) do
       get '/users'
     end
+
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end
