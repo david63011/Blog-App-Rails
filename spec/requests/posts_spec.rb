@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET /posts' do
+  describe 'GET /index' do
     before(:each) do
       get '/posts'
     end
@@ -19,19 +19,11 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'Get #show' do
-    let(:post) { Post.create(author_id: 1, content: 'This is a test post.', likes_counter: 0, comments_counter: 0) }
-    before(:each) do
-      get "/posts/#{post.id}"
-    end
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
-    end
-    it 'renders the show template' do
-      expect(response).to render_template(:show)
-    end
-    it 'does not render the index template' do
-      expect(response).to_not render_template(:index)
+  describe 'GET /show' do
+    it 'assigns the requested post as @post' do
+      post = Post.create! valid_attributes
+      get :show, params: { id: post.to_param }
+      expect(assigns(:post)).to eq(post)
     end
   end
 end
