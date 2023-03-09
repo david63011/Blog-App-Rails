@@ -1,1 +1,37 @@
-<h1>Here is a list of posts for a given user</h1>
+<section class= 'show-view'>
+    <div class= 'show-view-header'>
+        <img src='<%= @user.photo %>' alt="<%= @user.name %>'s profile picture"/>
+        <div>
+        <h2><%= @user.name %></h2>
+        <p>
+            Number of post: <%= @user.posts_counter %>
+        </p>
+        </div>
+    </div>
+    </section>
+    <section class='bio-section'>
+        <h3>Biography</h3>
+        <p>
+            <%= @user.bio %>
+        </p>
+    </section>
+      <ul class= 'post-users'>
+  <% @user.latest_posts.each do |post| %>
+  <li>
+  <div class= 'post-data'>
+    <h3><%= link_to post.title, user_post_path(@user,post) %></h3>
+    <p>
+      <%= post.text%>
+    </p>
+    </div>
+    <div class= 'post-counters'>
+        <p>
+            <%= post.likes_counter %> likes
+        </p>
+        <p>
+            <%= post.posts_counter%> comments
+        </p>
+    </div>
+    </li>
+     <% end %>
+    </ul>

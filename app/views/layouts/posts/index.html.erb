@@ -1,0 +1,42 @@
+<section class= 'show-view'>
+    <div class= 'show-view-header'>
+        <img src='<%= @user.photo %>' alt="<%= @user.name %>'s profile picture"/>
+        <div>
+        <h2><%= @user.name %></h2>
+        <p>
+            Number of post: <%= @user.posts_counter %>
+        </p>
+        </div>
+    </div>
+</section>
+<ul class = 'post-users'>
+    <% @user.posts.each do |post| %>
+    <li>
+    <div class= 'post-data'>
+        <h3><%= link_to post.title, user_post_path(post.author_id, post) %></h3>
+        <p>
+        <%= post.text%>
+        </p>
+        </div>
+        <div class= 'post-counters'>
+            <p>
+                <%= post.likes_counter %> likes
+            </p>
+            <p>
+                <%= post.comments_counter%> comments
+            </p>
+        </div>
+        <div class= 'comments'>
+            <h3>Comments</h3>
+            <ul>
+                <% post.comments.each do |comment| %>
+                <li>
+                    <p>
+                         <%= comment.author.name %>
+                        <%= comment.text %>
+                    </p>
+                </li>
+                <% end %>
+                </div>
+            </ul>
+       </section>
